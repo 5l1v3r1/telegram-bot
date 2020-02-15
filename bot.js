@@ -2,8 +2,8 @@ const ttoken = 'YOUR-TOKEN-HERE';
 var telegram = require('telegraf');
 var bot = new telegram(ttoken);
 
-bot.command('hi', message => {
-  message.reply("Hi!");
-});
+bot.start((ctx) => ctx.reply('Welcome!'));
+
+bot.command('today', (ctx) => ctx.reply('Today is: '+new Date()));
 
 bot.launch();
